@@ -1,0 +1,33 @@
+{
+  "name": "base-discord-bot-typescript",
+  "version": "1.0.0",
+  "description": "This project is a base for creating Discord bots using discord.js and TypeScript.",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "ts-node-dev --rs src/index.ts",
+    "deploy": "node dist/deploy-commands.js",
+    "build": "tsc --build",
+    "lint": "rome check src"
+  },
+  "keywords": [
+    "discord bot",
+    "template",
+    "discord.js",
+    "typescript"
+  ],
+  "author": "ArturoAtomplay",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "rome": "^11.0.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3",
+    "pino": "^8.8.0",
+    "pino-pretty": "^9.1.1"
+  }
+}
