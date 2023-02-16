@@ -6,9 +6,9 @@ import { Client, Collection } from "discord.js";
 
 export default class Bot extends Client {
 	public commands = new Collection<
-		String,
+		string,
 		CommandBuilder | ContextMenuBuilder
 	>();
-	public components = new Collection<String, ComponentBuilder>();
+	public components = new Collection<string, ComponentBuilder>();
 	public logger = logger;
 }
