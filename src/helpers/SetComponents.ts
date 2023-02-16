@@ -12,8 +12,7 @@ export default async function setComponents(client: Bot) {
 		const componentFiles = readDirectory(join(componentsDir, category), true);
 
 		for (const componentFile of componentFiles) {
-			// rome-ignore lint/suspicious/noExplicitAny: <explanation>
-			const { default: component }: { default: ComponentBuilder<any> } =
+			const { default: component }: { default: ComponentBuilder } =
 				await import(join(componentsDir, category, componentFile));
 			client.components.set(component.id, component);
 		}

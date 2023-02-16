@@ -1,7 +1,7 @@
 import Bot from "./Bot";
 import { ClientEvents } from "discord.js";
 
-export class EventBuilder<T extends keyof ClientEvents> {
+export class EventBuilder<T extends keyof ClientEvents = keyof ClientEvents> {
 	run!: EventFunction<T>;
 	public constructor(public name: T, public once?: true) {}
 

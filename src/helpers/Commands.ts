@@ -7,20 +7,15 @@ import ContextMenuBuilder from "../structures/ContextMenuBuilder";
 const commandsDir = join(__dirname, "..", "commands");
 
 export default async function getCommands() {
-	// rome-ignore lint/suspicious/noExplicitAny: <explanation>
-	const commands: (CommandBuilder | ContextMenuBuilder<any>)[] = [];
+	const commands: (CommandBuilder | ContextMenuBuilder)[] = [];
 	const categories = readDirectory(commandsDir);
 
 	for (const category of categories) {
 		const commandFiles = readDirectory(join(commandsDir, category), true);
 
 		for (const commandFile of commandFiles) {
-			const {
-				default: cmd,
-				// rome-ignore lint/suspicious/noExplicitAny: <explanation>
-			}: { default: CommandBuilder | ContextMenuBuilder<any> } = await import(
-				join(commandsDir, category, commandFile)
-			);
+			const { default: cmd }: { default: CommandBuilder | ContextMenuBuilder } =
+				await import(join(commandsDir, category, commandFile));
 			commands.push(cmd);
 		}
 	}

@@ -2,6 +2,7 @@ import Bot from "./Bot";
 import { ChatInputCommandInteraction, SlashCommandBuilder } from "discord.js";
 
 export class CommandBuilder extends SlashCommandBuilder {
+	cmdType = "slash";
 	run!: CommandFunction;
 
 	public setCallback(fn: CommandFunction) {

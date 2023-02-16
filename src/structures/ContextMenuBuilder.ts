@@ -11,8 +11,9 @@ interface ContextMenuTypes {
 }
 
 export default class ContextMenuBuilder<
-	T extends keyof ContextMenuTypes,
+	T extends keyof ContextMenuTypes = keyof ContextMenuTypes,
 > extends ContextMenuCommandBuilder {
+	cmdType = "context";
 	run!: ContextMenuFunction<T>;
 	public setCallback(fn: ContextMenuFunction<T>) {
 		this.run = fn;

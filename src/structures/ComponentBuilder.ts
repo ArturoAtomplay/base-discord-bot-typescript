@@ -11,7 +11,9 @@ interface ComponentTypes {
 	Modal: ModalSubmitInteraction;
 }
 
-export class ComponentBuilder<T extends keyof ComponentTypes> {
+export class ComponentBuilder<
+	T extends keyof ComponentTypes = keyof ComponentTypes,
+> {
 	run!: ComponentFunction<T>;
 	public constructor(public id: string, public type: T) {}
 

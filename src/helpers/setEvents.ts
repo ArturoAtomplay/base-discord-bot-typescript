@@ -9,8 +9,7 @@ export default async function setEvents(client: Bot) {
 	const eventFiles = readdirSync(eventsDir);
 
 	for (const eventFile of eventFiles) {
-		// rome-ignore lint/suspicious/noExplicitAny: <explanation>
-		const { default: event }: { default: EventBuilder<any> } = await import(
+		const { default: event }: { default: EventBuilder } = await import(
 			join(eventsDir, eventFile)
 		);
 
