@@ -22,11 +22,3 @@ export default async function getCommands() {
 
 	return commands;
 }
-
-export async function setCommands(client: Bot) {
-	const commands = await getCommands();
-
-	for (const cmd of commands) {
-		client.commands.set(cmd.name, cmd);
-	}
-}
