@@ -1,18 +1,18 @@
-import Bot from "./Bot";
-import { ChatInputCommandInteraction, SlashCommandBuilder } from "discord.js";
+import Bot from './Bot';
+import { ChatInputCommandInteraction, SlashCommandBuilder } from 'discord.js';
 
 export class CommandBuilder extends SlashCommandBuilder {
-	cmdType = "slash";
-	run!: CommandFunction;
+  cmdType = 'slash';
+  run!: CommandFunction;
 
-	public setCallback(fn: CommandFunction) {
-		this.run = fn;
+  public setCallback(fn: CommandFunction) {
+    this.run = fn;
 
-		return this;
-	}
+    return this;
+  }
 }
 
 type CommandFunction = (
-	interaction: ChatInputCommandInteraction,
-	client: Bot,
+  interaction: ChatInputCommandInteraction,
+  client: Bot,
 ) => Promise<unknown>;

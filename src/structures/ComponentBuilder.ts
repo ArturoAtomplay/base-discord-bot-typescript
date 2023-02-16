@@ -1,30 +1,30 @@
-import Bot from "./Bot";
+import Bot from './Bot';
 import {
-	ButtonInteraction,
-	ModalSubmitInteraction,
-	StringSelectMenuInteraction,
-} from "discord.js";
+  ButtonInteraction,
+  ModalSubmitInteraction,
+  StringSelectMenuInteraction,
+} from 'discord.js';
 
 interface ComponentTypes {
-	Button: ButtonInteraction;
-	SelectMenu: StringSelectMenuInteraction;
-	Modal: ModalSubmitInteraction;
+  Button: ButtonInteraction;
+  SelectMenu: StringSelectMenuInteraction;
+  Modal: ModalSubmitInteraction;
 }
 
 export class ComponentBuilder<
-	T extends keyof ComponentTypes = keyof ComponentTypes,
+  T extends keyof ComponentTypes = keyof ComponentTypes,
 > {
-	run!: ComponentFunction<T>;
-	public constructor(public id: string, public type: T) {}
+  run!: ComponentFunction<T>;
+  public constructor(public id: string, public type: T) {}
 
-	public setCallback(fn: ComponentFunction<T>) {
-		this.run = fn;
+  public setCallback(fn: ComponentFunction<T>) {
+    this.run = fn;
 
-		return this;
-	}
+    return this;
+  }
 }
 
 type ComponentFunction<T extends keyof ComponentTypes> = (
-	client: Bot,
-	interaction: ComponentTypes[T],
+  client: Bot,
+  interaction: ComponentTypes[T],
 ) => Promise<unknown>;

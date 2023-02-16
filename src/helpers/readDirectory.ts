@@ -1,15 +1,15 @@
-import * as fs from "fs";
+import * as fs from 'fs';
 
 export default function readDirectory(
-	directory: string,
-	jsOnly: boolean = false,
+  directory: string,
+  jsOnly: boolean = false,
 ): string[] {
-	let files = fs.readdirSync(directory);
+  let files = fs.readdirSync(directory);
 
-	if (jsOnly)
-		files = files.filter(
-			(file) => file.endsWith(".js") || file.endsWith(".ts"),
-		);
+  if (jsOnly)
+    files = files.filter(
+      (file) => file.endsWith('.js') || file.endsWith('.ts'),
+    );
 
-	return files;
+  return files;
 }

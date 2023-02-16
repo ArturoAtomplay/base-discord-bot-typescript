@@ -1,8 +1,8 @@
-import { ComponentBuilder } from "../../structures/ComponentBuilder";
+import { ComponentBuilder } from '../../structures/ComponentBuilder';
 
 export default new ComponentBuilder(
-	"selMenu-test-select",
-	"SelectMenu",
+  'selMenu-test-select',
+  'SelectMenu',
 ).setCallback(async (client, interaction) => {
-	interaction.reply("select-menu test completed");
+  interaction.reply('select-menu test completed');
 });

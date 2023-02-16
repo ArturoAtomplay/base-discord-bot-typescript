@@ -1,28 +1,28 @@
-import Bot from "./Bot";
+import Bot from './Bot';
 import {
-	ContextMenuCommandBuilder,
-	MessageContextMenuCommandInteraction,
-	UserContextMenuCommandInteraction,
-} from "discord.js";
+  ContextMenuCommandBuilder,
+  MessageContextMenuCommandInteraction,
+  UserContextMenuCommandInteraction,
+} from 'discord.js';
 
 interface ContextMenuTypes {
-	Message: MessageContextMenuCommandInteraction;
-	User: UserContextMenuCommandInteraction;
+  Message: MessageContextMenuCommandInteraction;
+  User: UserContextMenuCommandInteraction;
 }
 
 export default class ContextMenuBuilder<
-	T extends keyof ContextMenuTypes = keyof ContextMenuTypes,
+  T extends keyof ContextMenuTypes = keyof ContextMenuTypes,
 > extends ContextMenuCommandBuilder {
-	cmdType = "context";
-	run!: ContextMenuFunction<T>;
-	public setCallback(fn: ContextMenuFunction<T>) {
-		this.run = fn;
+  cmdType = 'context';
+  run!: ContextMenuFunction<T>;
+  public setCallback(fn: ContextMenuFunction<T>) {
+    this.run = fn;
 
-		return this;
-	}
+    return this;
+  }
 }
 
 type ContextMenuFunction<T extends keyof ContextMenuTypes> = (
-	interaction: ContextMenuTypes[T],
-	client: Bot,
+  interaction: ContextMenuTypes[T],
+  client: Bot,
 ) => Promise<unknown>;
