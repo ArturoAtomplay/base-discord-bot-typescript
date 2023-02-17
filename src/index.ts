@@ -9,7 +9,7 @@ import { join } from 'path';
 const client = new Bot({ intents: [513] }); //https://ziad87.net/intents/
 (async () => {
   // EVENT LOADER //
-  const eventsDir = join(__dirname, '..', 'events');
+  const eventsDir = join(__dirname, 'events');
 
   for (const eventFile of readDirectory(eventsDir)) {
     const { default: event }: { default: EventBuilder } = await import(
@@ -29,7 +29,7 @@ const client = new Bot({ intents: [513] }); //https://ziad87.net/intents/
   }
 
   // COMPONENT LOADER //
-  const componentsDir = join(__dirname, '..', 'components');
+  const componentsDir = join(__dirname, 'components');
 
   for (const category of readDirectory(componentsDir)) {
     const componentFiles = readDirectory(join(componentsDir, category), true);
