@@ -26,5 +26,5 @@ export class ComponentBuilder<
 
 type ComponentFunction<T extends keyof ComponentTypes> = (
   client: Bot,
-  interaction: ComponentTypes[T],
+  interaction: ComponentTypes[T]
 ) => Promise<unknown>;

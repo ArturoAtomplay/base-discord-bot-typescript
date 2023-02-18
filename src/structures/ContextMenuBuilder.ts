@@ -24,5 +24,5 @@ export default class ContextMenuBuilder<
 
 type ContextMenuFunction<T extends keyof ContextMenuTypes> = (
   interaction: ContextMenuTypes[T],
-  client: Bot,
+  client: Bot
 ) => Promise<unknown>;

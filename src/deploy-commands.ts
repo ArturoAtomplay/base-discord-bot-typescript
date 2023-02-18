@@ -8,12 +8,12 @@ import getCommands from './helpers/Commands';
 
   try {
     console.log(
-      `Started refreshing ${commands.length} application (/) commands.`,
+      `Started refreshing ${commands.length} application (/) commands.`
     );
 
     await rest.put(
       Routes.applicationGuildCommands(config.CLIENT_ID, config.GUILD_ID),
-      { body: commands },
+      { body: commands }
     );
 
     console.log('Successfully reloaded application (/) commands.');

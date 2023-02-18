@@ -22,7 +22,7 @@ export default new EventBuilder('interactionCreate').setCallback(
       } catch (error) {
         client.logger.error(
           error,
-          `An error occurred while running the '${interaction.commandName}' command. Please check the code and try again.`,
+          `An error occurred while running the '${interaction.commandName}' command. Please check the code and try again.`
         );
       }
     }
@@ -46,7 +46,7 @@ export default new EventBuilder('interactionCreate').setCallback(
       } catch (error) {
         client.logger.error(
           error,
-          `An error occurred while running the '${interaction.commandName}' context menu command. Please check the code and try again.`,
+          `An error occurred while running the '${interaction.commandName}' context menu command. Please check the code and try again.`
         );
       }
     }
@@ -67,7 +67,7 @@ export default new EventBuilder('interactionCreate').setCallback(
       } catch (error) {
         client.logger.error(
           error,
-          `An error occurred while running the '${interaction.customId}' button. Please check the code and try again.`,
+          `An error occurred while running the '${interaction.customId}' button. Please check the code and try again.`
         );
       }
     }
@@ -90,7 +90,7 @@ export default new EventBuilder('interactionCreate').setCallback(
       } catch (error) {
         client.logger.error(
           error,
-          `An error occurred while running the '${interaction.customId}' selectMenu. Please check the code and try again.`,
+          `An error occurred while running the '${interaction.customId}' selectMenu. Please check the code and try again.`
         );
       }
     }
@@ -111,9 +111,9 @@ export default new EventBuilder('interactionCreate').setCallback(
       } catch (error) {
         client.logger.error(
           error,
-          `An error occurred while running the '${interaction.customId}' modal. Please check the code and try again.`,
+          `An error occurred while running the '${interaction.customId}' modal. Please check the code and try again.`
         );
       }
     }
-  },
+  }
 );

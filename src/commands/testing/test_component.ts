@@ -28,9 +28,9 @@ export default new CommandBuilder()
         {
           name: 'modal',
           value: 'modal',
-        },
+        }
       )
-      .setRequired(true),
+      .setRequired(true)
   )
   .setCallback(async (interaction, client) => {
     const type = interaction.options.getString('type', true);
@@ -39,7 +39,7 @@ export default new CommandBuilder()
       new ButtonBuilder()
         .setCustomId('btn-test-primary')
         .setLabel('Click me!')
-        .setStyle(ButtonStyle.Primary),
+        .setStyle(ButtonStyle.Primary)
     );
 
     const selectMenuRow =
@@ -57,8 +57,8 @@ export default new CommandBuilder()
               label: 'You can select me too',
               description: 'This is also a description',
               value: 'second_option',
-            },
-          ),
+            }
+          )
       );
 
     const questionInput = new TextInputBuilder()
@@ -70,7 +70,7 @@ export default new CommandBuilder()
       .setCustomId('modal-test-myModal')
       .setTitle('My Modal')
       .addComponents(
-        new ActionRowBuilder<TextInputBuilder>().addComponents(questionInput),
+        new ActionRowBuilder<TextInputBuilder>().addComponents(questionInput)
       );
 
     if (type === 'modal') return await interaction.showModal(modal);

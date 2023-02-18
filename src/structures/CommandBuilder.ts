@@ -14,5 +14,5 @@ export class CommandBuilder extends SlashCommandBuilder {
 
 type CommandFunction = (
   interaction: ChatInputCommandInteraction,
-  client: Bot,
+  client: Bot
 ) => Promise<unknown>;
